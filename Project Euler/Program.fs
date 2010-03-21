@@ -9,4 +9,5 @@ Euler.Problem7.printResult
 Euler.Problem8.printResult
 Euler.Problem9.printResult
 Euler.Problem10.printResult
+Euler.Problem11.printResult
 ignore (Console.ReadKey(true))
