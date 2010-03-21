@@ -1,0 +1,4 @@
+*.suo
+.gitignore.swp
+bin/
+obj/

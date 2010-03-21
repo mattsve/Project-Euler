@@ -1,0 +1,2 @@
+mkdir -p  bin
+fsc *.fs --out:bin/ProjectEuler.exe
