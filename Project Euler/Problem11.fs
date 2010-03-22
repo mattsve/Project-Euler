@@ -23,13 +23,54 @@ module Problem11 =
                       20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
                       01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"
     
+    let pairToInt a b =
+        (Char.toNumber a) * 10 + (Char.toNumber b)
+        
+    let rec charsToInt s =
+        match s with
+        | a::b::(_ as tail) -> (pairToInt a b)::charsToInt tail
+        | _ -> []
+
     let numberGrid =
         stringGrid.Split('\n') |> 
         Seq.map String.toChars |> 
-        Seq.map (Seq.filter Microsoft.FSharp.Core.char.IsDigit) 
-                      
+        Seq.map (Seq.filter Microsoft.FSharp.Core.char.IsDigit) |>
+        Seq.map (Seq.toList) |>
+        Seq.map charsToInt |>
+        Seq.toList
+        
+    let product a b c d =
+        a * b * c * d
+
+    let rec horisontalMatch lst =
+        match lst with
+        | a::b::c::d::(_ as tail) -> product a b c d :: horisontalMatch tail
+        | _ -> []
+
+    let rec findHorisontalProducts row =
+        match row with
+        | a::b::c::d::(_ as tail) -> (product a b c d)::findHorisontalProducts tail
+        | _ -> []
+ 
+    let rec findPatterns table =
+        match table with
+        | (t11::(t12::t13::t14::_ as row1))::
+          ((t21::(t22::t23::t24::_ as row2))::
+          (t31::(t32::t33::t34::_ as row3))::
+          (t41::(t42::t43::t44::_ as row4))::
+          _ as restOfTable)      -> let horisontal = product t11 t12 t13 t14
+                                    let vertical = product t11 t21 t31 t41
+                                    let diagonal1 = product t11 t22 t33 t44
+                                    let diagonal2 = product t14 t23 t32 t41
+                                    [horisontal; vertical; diagonal1; diagonal2] :: findPatterns [row1; row2; row3; row4] @ findPatterns restOfTable
+        | (row1::row2::row3::[]) -> [findHorisontalProducts row1; findHorisontalProducts row2; findHorisontalProducts row3]
+        | _                      -> [[]]
+
     let result =
-        "Not done yet!"
+        numberGrid |>
+        findPatterns |>
+        List.concat |>
+        List.max
         
     let printResult =
         printfn "Problem 11: %A" result
