@@ -11,4 +11,5 @@ Euler.Problem9.printResult
 Euler.Problem10.printResult
 Euler.Problem11.printResult
 Euler.Problem12.printResult
+Euler.Problem13.printResult
 ignore (Console.ReadKey(true))
