@@ -56,15 +56,15 @@ module Problem11 =
         match table with
         | (t11::(t12::t13::t14::_ as row1))::
           ((t21::(t22::t23::t24::_ as row2))::
-          (t31::(t32::t33::t34::_ as row3))::
-          (t41::(t42::t43::t44::_ as row4))::
-          _ as restOfTable)      -> let horisontal = product t11 t12 t13 t14
-                                    let vertical = product t11 t21 t31 t41
-                                    let diagonal1 = product t11 t22 t33 t44
-                                    let diagonal2 = product t14 t23 t32 t41
-                                    [horisontal; vertical; diagonal1; diagonal2] :: findPatterns [row1; row2; row3; row4] @ findPatterns restOfTable
-        | (row1::row2::row3::[]) -> [findHorisontalProducts row1; findHorisontalProducts row2; findHorisontalProducts row3]
-        | _                      -> [[]]
+           (t31::(t32::t33::t34::_ as row3))::
+           (t41::(t42::t43::t44::_ as row4))::
+           _ as restOfTable)      -> let horisontal = product t11 t12 t13 t14
+                                     let vertical = product t11 t21 t31 t41
+                                     let diagonal1 = product t11 t22 t33 t44
+                                     let diagonal2 = product t14 t23 t32 t41
+                                     [horisontal; vertical; diagonal1; diagonal2] :: findPatterns [row1; row2; row3; row4] @ findPatterns restOfTable
+        | (row1::row2::row3::[])  -> [findHorisontalProducts row1; findHorisontalProducts row2; findHorisontalProducts row3]
+        | _                       -> [[]]
 
     let result =
         numberGrid |>
