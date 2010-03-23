@@ -23,3 +23,13 @@ module Dict =
         match dict.TryGetValue(key) with
         | true, value -> Some (value)
         | false, _    -> None
+        
+module Memoization =
+    let memoize (func : 'a->'b) =
+        let cache = Dict.empty()
+        fun n ->
+            match Dict.tryFind n cache with
+            | Some (result) -> result
+            | None          -> let result = func n
+                               Dict.add n result cache |> ignore
+                               result
