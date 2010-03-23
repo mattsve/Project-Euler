@@ -1,20 +1,4 @@
 namespace Euler
-
-module Dict =
-    open System.Collections.Generic
-    
-    let empty() = new Dictionary<_, _>()
-    
-    let add key value (dict : #IDictionary<'a, 'b>) =
-        dict.[key] <- value; dict
-
-    let remove (key : 'a) (dict : #IDictionary<'a, 'b>) =
-        dict.Remove(key) |> ignore; dict
-
-    let tryFind key (dict : #IDictionary<'a, 'b>) =
-        match dict.TryGetValue(key) with
-        | true, value -> Some (value)
-        | false, _    -> None
         
 module PrimeGenerator =
     
