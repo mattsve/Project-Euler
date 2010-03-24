@@ -59,6 +59,7 @@
     <Compile Include="Problem13.fs" />
     <Compile Include="Problem14.fs" />
     <Compile Include="Problem15.fs" />
+    <Compile Include="Problem16.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
