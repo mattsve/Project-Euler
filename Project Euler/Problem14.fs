@@ -19,5 +19,4 @@ module Problem14 =
     let result =
         numbers |> List.maxBy snd |> fst
         
-    let printResult =
-        printfn "Problem 14: %A" result
+    

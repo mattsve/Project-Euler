@@ -16,5 +16,4 @@ module Problem6 =
     let result =
         (numbers |> sum |> square) - (numbers |> squares |> sum)
 
-    let printResult =
-        printfn "Problem 6: %A" result
+    

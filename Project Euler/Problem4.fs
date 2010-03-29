@@ -17,4 +17,4 @@ module Problem4 =
             for y in 100 .. 999 do
                 if isPalindrome (x * y) then yield x * y] |> List.reduce max
     
-    let printResult = printfn "Problem 4: %d" result
+    

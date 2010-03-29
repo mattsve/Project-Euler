@@ -8,6 +8,4 @@ module Problem16 =
         List.map (fun x -> bigint.Parse(x.ToString())) digits |>
         List.fold (+) 0I
 
-    let printResult =
-        printfn "Problem 16: %A" result
-
+    

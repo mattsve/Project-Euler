@@ -8,5 +8,4 @@ module Problem2 =
     let evenSequence = Seq.filter (fun x -> x % 2 = 0) limitedFibonacciSequence
 
     let result = Seq.fold (+) (0) evenSequence
-
-    let printResult = printfn "Problem 2: %d" result
+    

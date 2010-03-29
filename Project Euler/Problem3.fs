@@ -22,5 +22,4 @@ module Problem3 =
     let result =
         List.reduce max (primeFactors 600851475143L)
 
-    let printResult =
-        printfn "Problem 3: %d" result
+    

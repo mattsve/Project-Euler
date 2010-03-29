@@ -37,5 +37,4 @@ module Problem8 =
     let result =
         numbers |> toQuintuplets |> List.map product |> List.max
         
-    let printResult =
-        printfn "Problem 8: %A" result
+    

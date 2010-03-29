@@ -114,5 +114,4 @@ module Problem13 =
         string |>
         (fun (x : string) -> x.Substring(0, 10))
         
-    let printResult =
-        printfn "Problem 13: %A" result
+    

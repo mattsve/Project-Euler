@@ -31,6 +31,4 @@ module Problem9 =
     let result =
         pythagoreanTriplets |> Seq.find (sum >> equals 1000) |> product
         
-    let printResult =
-        printfn "Problem 9: %A" result
-        
+           

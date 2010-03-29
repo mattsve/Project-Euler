@@ -13,5 +13,4 @@ module Problem15 =
     let result =
         numberOfRoutes (20, 20)
         
-    let printResult =
-        printfn "Problem 15: %A" result
+    

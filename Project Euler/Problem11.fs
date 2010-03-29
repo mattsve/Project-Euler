@@ -72,5 +72,4 @@ module Problem11 =
         List.concat |>
         List.max
         
-    let printResult =
-        printfn "Problem 11: %A" result
+    

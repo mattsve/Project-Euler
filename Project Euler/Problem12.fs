@@ -17,6 +17,4 @@ module Problem12 =
         triangleNumbers |>
         Seq.find (fun x -> Seq.length (findFactors x) > 500)
 
-    let printResult =
-        printfn "Problem 12: %A" result
-
+    

@@ -37,6 +37,3 @@ module Problem18 =
                 
     let result =
         maximumTotal triangle
-        
-    let printResult =
-        printfn "Problem 18: %A" result

@@ -11,5 +11,4 @@ module Problem5 =
     let result =
         List.reduce lcm [1I .. 20I]
 
-    let printResult = 
-        printfn "Problem 5: %A" result
+    

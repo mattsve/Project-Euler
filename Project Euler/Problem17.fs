@@ -65,6 +65,3 @@ module Problem17 =
         List.map (fun (x : string) -> x.Length) |>
         List.fold (+) 0
 
-
-    let printResult =
-        printfn "Problem 17: %A" result
