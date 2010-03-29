@@ -8,6 +8,13 @@ module Char =
     let toNumber (c : char) =
         int c - int '0'
 
+module Math =
+
+    let rec digits n =
+        match n with
+        | _ when n < 10I -> [n]
+        | _              -> digits (n / 10I) @ digits (n % 10I)
+
 module Dict =
     open System.Collections.Generic
 
